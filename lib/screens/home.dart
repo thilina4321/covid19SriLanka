@@ -1,4 +1,6 @@
+import 'package:covidsrilanka/utils/util_functions.dart';
 import 'package:covidsrilanka/widgets/card_data.dart';
+import 'package:covidsrilanka/widgets/main_banner.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,27 +8,32 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      initialIndex: 0,
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(tabs: [
-            Tab(
-              icon: Icon(Icons.access_alarm),
-            ),
-            Tab(
-              icon: Icon(Icons.ac_unit),
-            )
-          ]),
-        ),
-        body: TabBarView(
-          children: [
-            CardData(),
-            Text('data'),
-          ],
-        ),
+    return Scaffold(
+      body: Column(
+        children: [
+          MainBanner(),
+          SizedBox(height: 20),
+          Row(
+            children: [
+              ButtonBar(
+                children: [
+                  MaterialButton(
+                    child: Icon(Icons.local_activity),
+                    onPressed: () =>
+                        UtilFunctions.navigateTo(CardData(), context),
+                  ),
+                  MaterialButton(
+                    child: Icon(Icons.local_activity),
+                    onPressed: () =>
+                        UtilFunctions.navigateTo(CardData(), context),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
 }
+
