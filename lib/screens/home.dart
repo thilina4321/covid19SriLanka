@@ -1,4 +1,3 @@
-import 'package:covidsrilanka/utils/util_functions.dart';
 import 'package:covidsrilanka/widgets/card_data.dart';
 import 'package:covidsrilanka/widgets/main_banner.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            CardData()
+            CardData(isSriLanka)
           ],
         ),
       ),
