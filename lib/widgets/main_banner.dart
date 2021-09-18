@@ -19,6 +19,7 @@ class MainBanner extends StatelessWidget {
               child: Image.asset(
                 "images/doctor.jpeg",
                 fit: BoxFit.cover,
+                height: 200,
               ),
             ),
             Expanded(

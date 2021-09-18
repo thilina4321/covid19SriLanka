@@ -7,14 +7,6 @@ class CardData extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          
-          // "local_new_cases": 2078,
-          // "local_total_cases": 502302,
-          // "local_total_number_of_individuals_in_hospitals": 59244,
-          // "local_deaths": 11938,
-          // "local_new_deaths": 121,
-          // "local_recovered": 431036,
-          // "local_active_cases": 59244,
           Row(
             children: [
               Expanded(

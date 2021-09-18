@@ -1,4 +1,6 @@
+import 'package:covidsrilanka/screens/home.dart';
 import 'package:covidsrilanka/utils/constants.dart';
+import 'package:covidsrilanka/utils/util_functions.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -62,7 +64,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                       Text(
                         "  Welcome to COVID-19 infromation portal",
-                        style: TextStyle(letterSpacing: 1,fontSize: 15),
+                        style: TextStyle(letterSpacing: 1, fontSize: 15),
                       ),
                       SizedBox(
                         height: size.height / 40,
@@ -74,7 +76,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           children: [
                             Text("GET STARTED"),
                             MaterialButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                UtilFunctions.navigateTo(HomePage(), context);
+                              },
                               color: Colors.blue[300],
                               textColor: Colors.white,
                               child: Icon(
