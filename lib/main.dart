@@ -1,3 +1,4 @@
+import 'package:covidsrilanka/screens/home.dart';
 import 'package:covidsrilanka/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: SplashScreen(),
+      routes: {
+        HomePage.routeName: (ctx) => HomePage(),
+      },
     );
   }
 }
-
-
-
