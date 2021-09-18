@@ -1,3 +1,4 @@
+import 'package:covidsrilanka/utils/constants.dart';
 import 'package:covidsrilanka/utils/util_functions.dart';
 import 'package:covidsrilanka/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,12 +21,18 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              child: Image.asset("assets/images/virus.png")
+            Center(
+              child: Container(
+                width: size.width/2,
+                height: size.height/2,
+                child: Image.asset(Constants.imageAsset("virus.png"))
+              ),
             ),
           ],
         ),
