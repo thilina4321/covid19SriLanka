@@ -28,21 +28,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ),
               Positioned(
-                top: size.height / 1.5,
+                top: size.height / 1.55,
                 child: Container(
                   width: size.width,
-                  height: size.height / 4,
+                  height: size.height / 2,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(25),
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30), 
                     ),
                   ),
                 ),
               ),
               Positioned(
-                top: size.height / 1.45,
+                top: size.height / 1.5,
                 child: Container(
                   margin: EdgeInsets.only(left: 10),
                   child: Column(
@@ -53,21 +53,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         style: TextStyle(fontSize: 30),
                       ),
                       SizedBox(
-                        height: size.height / 500,
+                        height: size.height / 400,
                       ),
                       Text(
                         " Stay healthy",
                         style: TextStyle(fontSize: 30),
                       ),
                       SizedBox(
-                        height: size.height / 60,
+                        height: size.height / 50,
                       ),
                       Text(
                         "  Welcome to COVID-19 infromation portal",
                         style: TextStyle(letterSpacing: 1, fontSize: 15),
                       ),
                       SizedBox(
-                        height: size.height / 40,
+                        height: size.height / 20,
                       ),
                       Container(
                         width: size.width,
