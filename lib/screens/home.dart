@@ -2,6 +2,12 @@ import 'package:covidsrilanka/widgets/card_data.dart';
 import 'package:covidsrilanka/widgets/main_banner.dart';
 import 'package:flutter/material.dart';
 
+class Hello{
+  final String? name;
+
+  Hello({this.name});
+}
+
 class HomePage extends StatefulWidget {
   static String routeName = "home-page";
 
@@ -11,8 +17,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isSriLanka = true;
+  Hello myName = Hello(name: '1');
 
-  changeDestination(bool value) => {
+  changeDirection(bool value) => {
         print(value),
         setState(() => {isSriLanka = value})
       };
@@ -33,9 +40,10 @@ class _HomePageState extends State<HomePage> {
               width: 200,
               child: Row(
                 children: [
+                  Text(myName.name.toString()),
                   Expanded(
                     child: LocalOrGlobal(
-                      changeDestination: changeDestination,
+                      changeDestination: changeDirection,
                       value: true,
                       title: "Sri Lanka",
                       color: Colors.green.shade900,
@@ -43,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Expanded(
                     child: LocalOrGlobal(
-                      changeDestination: changeDestination,
+                      changeDestination: changeDirection,
                       value: false,
                       title: "World",
                       color: Colors.blue.shade900,
