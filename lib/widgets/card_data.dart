@@ -12,6 +12,7 @@ class CardData extends StatefulWidget {
 class _CardDataState extends State<CardData> {
   Map localData = {};
   Map globalData = {};
+  var datetime = '';
 
   Future getHttp() async {
     try {
@@ -19,6 +20,8 @@ class _CardDataState extends State<CardData> {
           .get('https://www.hpb.health.gov.lk/api/get-current-statistical');
 
       var myData = response.data["data"];
+
+      datetime = myData['update_date_time'];
 
       localData = {
         "local_new_cases": myData["local_new_cases"],
@@ -63,13 +66,17 @@ class _CardDataState extends State<CardData> {
                   newDeaths: localData['local_new_deaths'],
                   newCases: localData['local_new_cases'],
                   totalDeaths: localData['local_deaths'],
-                  recoved: localData['local_recovered'])
+                  recoved: localData['local_recovered'],
+                  datetime: datetime,
+                )
               : LocalAndGloablCovidData(
                   totalCases: globalData['global_total_cases'],
                   newDeaths: globalData['global_new_deaths'],
                   newCases: globalData['global_new_cases'],
                   totalDeaths: globalData['global_deaths'],
-                  recoved: globalData['global_recovered']);
+                  recoved: globalData['global_recovered'],
+                  datetime: datetime,
+                );
         });
   }
 }
@@ -80,13 +87,16 @@ class LocalAndGloablCovidData extends StatelessWidget {
   final int newDeaths;
   final int totalDeaths;
   final int recoved;
+  final String datetime;
 
-  const LocalAndGloablCovidData(
-      {required this.totalCases,
-      required this.newDeaths,
-      required this.newCases,
-      required this.totalDeaths,
-      required this.recoved});
+  const LocalAndGloablCovidData({
+    required this.totalCases,
+    required this.newDeaths,
+    required this.newCases,
+    required this.totalDeaths,
+    required this.recoved,
+    required this.datetime,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -94,6 +104,7 @@ class LocalAndGloablCovidData extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       child: Column(
         children: [
+          Text("Last time data updated " + datetime),
           Row(
             children: [
               Expanded(
